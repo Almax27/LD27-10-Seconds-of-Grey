@@ -12,7 +12,7 @@
           <karmaReward>10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Fuck off will you</text>
+          <text>Fuck off will you.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
@@ -27,14 +27,14 @@
       <text>Lovely Day</text>
       <responces>
         <ConversationChoice>
-          <text>Not really</text>
+          <text>Not really.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
           <karmaReward>-5</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Yeah it is! I when was it last sunny?</text>
+          <text>Yeah it is! When was it last sunny?</text>
           <responces>
             <ConversationChoice>
               <text>Last Tuesday</text>
@@ -63,7 +63,7 @@
           <karmaReward>10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>No one likes you</text>
+          <text>No one likes you.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
@@ -92,7 +92,7 @@
           <karmaReward>0</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Bugger off you old coon</text>
+          <text>Bugger off you old fart.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
@@ -107,11 +107,11 @@
       <text>Do you know where I can find a cheeseburger?</text>
       <responces>
         <ConversationChoice>
-          <text>MaccyD's</text>
+          <text>How about a nice salad?</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>10</karmaReward>
+          <karmaReward>-10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>Burger'n'Fries</text>
@@ -128,11 +128,11 @@
           <karmaReward>-5</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Push off you old codger</text>
+          <text>Push off you old codger!</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>-10</karmaReward>
+          <karmaReward>-20</karmaReward>
         </ConversationChoice>
       </responces>
       <minKarma>-100</minKarma>
@@ -140,24 +140,24 @@
       <karmaReward>0</karmaReward>
     </ConversationChoice>
     <ConversationChoice>
-      <text>Taco bell, taco bell!</text>
+      <text>Taco Taco!</text>
       <responces>
         <ConversationChoice>
-          <text>Shit me</text>
+          <text>Burrito Burrito!</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
           <karmaReward>10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Ouche</text>
+          <text>No thanks</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
           <karmaReward>0</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>No, just no</text>
+          <text>Get outta my face.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
@@ -169,13 +169,13 @@
       <karmaReward>0</karmaReward>
     </ConversationChoice>
     <ConversationChoice>
-      <text>Damn son you ugly</text>
+      <text>Damn son, you ugly.</text>
       <responces>
         <ConversationChoice>
-          <text>So's your mumma</text>
+          <text>So's yo momma.</text>
           <responces>
             <ConversationChoice>
-              <text>Your mumma's so fat she's got her own post code</text>
+              <text>Your momma's so fat she's got her own post code</text>
               <responces>
                 <ConversationChoice>
                   <text>:(</text>
@@ -190,7 +190,7 @@
               <karmaReward>-10</karmaReward>
             </ConversationChoice>
             <ConversationChoice>
-              <text>Your mumma's so fat she don't need the internet, she's world wide</text>
+              <text>Your momma's so fat she don't need the internet, she's world wide</text>
               <responces>
                 <ConversationChoice>
                   <text>:(</text>
@@ -205,14 +205,14 @@
               <karmaReward>-10</karmaReward>
             </ConversationChoice>
             <ConversationChoice>
-              <text>Your mumma's so fat her blood type if Nutella</text>
+              <text>Your momma's so fat her blood type if Nutella</text>
               <responces>
                 <ConversationChoice>
-                  <text>:(</text>
+                  <text>Mmm, nutella.</text>
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>2</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -225,7 +225,7 @@
           <karmaReward>-10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
-          <text>Piss off</text>
+          <text>And you're fat, so what?</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
@@ -235,6 +235,215 @@
       <minKarma>-100</minKarma>
       <maxKarma>100</maxKarma>
       <karmaReward>-10</karmaReward>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>Let me tell you about the good book!</text>
+      <responces>
+        <ConversationChoice>
+          <text>Religion was invented to control the masses!</text>
+          <responces>
+            <ConversationChoice>
+              <text>Asshole</text>
+              <responces />
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>0</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>-10</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>With repect I shall decline.</text>
+          <responces>
+            <ConversationChoice>
+              <text>Maybe next time, Sir.</text>
+              <responces />
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>0</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>0</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>I'm open to all theological debate!</text>
+          <responces>
+            <ConversationChoice>
+              <text>Great success!</text>
+              <responces />
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>0</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>10</karmaReward>
+        </ConversationChoice>
+      </responces>
+      <minKarma>-100</minKarma>
+      <maxKarma>100</maxKarma>
+      <karmaReward>0</karmaReward>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>You played Papers, Please yet?</text>
+      <responces>
+        <ConversationChoice>
+          <text>Bloody addictive!</text>
+          <responces>
+            <ConversationChoice>
+              <text>IKR!</text>
+              <responces>
+                <ConversationChoice>
+                  <text>*high five*</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>0</karmaReward>
+                </ConversationChoice>
+                <ConversationChoice>
+                  <text>*hug*</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>5</karmaReward>
+                </ConversationChoice>
+                <ConversationChoice>
+                  <text>*arseslap*</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>-5</karmaReward>
+                </ConversationChoice>
+              </responces>
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>0</karmaReward>
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>I like it when I get bribed.</text>
+              <responces>
+                <ConversationChoice>
+                  <text>Huh?</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>0</karmaReward>
+                </ConversationChoice>
+                <ConversationChoice>
+                  <text>GLORY TO ARSTOTZKA!</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>10</karmaReward>
+                </ConversationChoice>
+              </responces>
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>-3</karmaReward>
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>I bought it twice!</text>
+              <responces>
+                <ConversationChoice>
+                  <text>Cha-ching!</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>3</karmaReward>
+                </ConversationChoice>
+              </responces>
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>3</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>20</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>I don't play such things.</text>
+          <responces />
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>0</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>It's bad.</text>
+          <responces>
+            <ConversationChoice>
+              <text>Get away from me.</text>
+              <responces />
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>-5</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>-30</karmaReward>
+        </ConversationChoice>
+      </responces>
+      <minKarma>-100</minKarma>
+      <maxKarma>100</maxKarma>
+      <karmaReward>0</karmaReward>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>My friend died...</text>
+      <responces>
+        <ConversationChoice>
+          <text>Oh dear God no!</text>
+          <responces />
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>10</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>It was me.</text>
+          <responces>
+            <ConversationChoice>
+              <text>You were the drunk on the Segway?</text>
+              <responces>
+                <ConversationChoice>
+                  <text>lulz</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>-5</karmaReward>
+                </ConversationChoice>
+                <ConversationChoice>
+                  <text>Oh, different Segway.  Sorry.</text>
+                  <responces />
+                  <minKarma>-100</minKarma>
+                  <maxKarma>100</maxKarma>
+                  <karmaReward>0</karmaReward>
+                </ConversationChoice>
+              </responces>
+              <minKarma>-100</minKarma>
+              <maxKarma>100</maxKarma>
+              <karmaReward>0</karmaReward>
+            </ConversationChoice>
+          </responces>
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>0</karmaReward>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>More air for me HAHAHahhahahA.</text>
+          <responces />
+          <minKarma>-100</minKarma>
+          <maxKarma>100</maxKarma>
+          <karmaReward>-10</karmaReward>
+        </ConversationChoice>
+      </responces>
+      <minKarma>-100</minKarma>
+      <maxKarma>100</maxKarma>
+      <karmaReward>0</karmaReward>
     </ConversationChoice>
   </choices>
 </ConversationData>
