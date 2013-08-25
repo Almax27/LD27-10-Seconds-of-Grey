@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	
 	public static ConversationData conversationData = null;
 	
+	public AudioClip music;
+	
 	public GameObject player = null;
 	public float playerSpeed = 10;
 	
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour {
 	{
 		playerAnimator = player.GetComponentInChildren<Animator>();
 		playerAnimator.SetBool("isWalking", true);
+		
+		AudioManager.PlayMusic(music);
 	}
 	
 	// Update is called once per frame
@@ -92,6 +96,16 @@ public class GameManager : MonoBehaviour {
 	void OnGUI()
 	{
 		GUILayout.BeginVertical("box");
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Music:", GUILayout.Width(40));
+		AudioManager.MusicVolume = GUILayout.HorizontalSlider(AudioManager.MusicVolume, 0, 1, GUILayout.Width(50));
+		GUILayout.EndHorizontal();
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Fx:", GUILayout.Width(40));
+		AudioManager.FxVolume = GUILayout.HorizontalSlider(AudioManager.FxVolume, 0, 1, GUILayout.Width(50));
+		GUILayout.EndHorizontal();
 		
 		GUILayout.Label("World Karma: " + worldKarma);
 		
