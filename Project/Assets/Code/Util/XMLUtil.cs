@@ -18,7 +18,7 @@ public class XMLUtil {
 		}
 		
 #if UNITY_EDITOR
-		string path = Path.Combine(Application.dataPath, fileName);
+		string path = Path.Combine(Application.dataPath, "Resources/"+fileName+".xml");
 		
 		XmlSerializer serializer = new XmlSerializer(obj.GetType());
 		using(FileStream stream = new FileStream(path, FileMode.Create)) //overrite if exists
@@ -36,7 +36,7 @@ public class XMLUtil {
 		T obj = default(T);
 		
 #if UNITY_EDITOR
-		string path = Path.Combine(Application.dataPath, fileName);
+		string path = Path.Combine(Application.dataPath, "Resources/"+fileName+".xml");
 		
 		XmlSerializer serializer = new XmlSerializer(typeof(T));
 		try //catch when doesn't exist
@@ -61,7 +61,7 @@ public class XMLUtil {
 			TextReader reader = new StringReader(xmlText.text);
 			
 			Debug.Log("Loading: " + fileName);
-			obj = serializer.Deserialize(reader);
+			obj = (T) serializer.Deserialize(reader);
 		}			
 #endif
 		if(obj == null)

@@ -25,8 +25,18 @@ public class WorldChunk : MonoBehaviour
 
 	}
 	
+	void OnDestroy()
+	{
+		//clean make sure no references are left of us
+		previous.Remove(this);
+		next.Remove(this);
+		if(current == this)
+			current = null;
+	}
+	
 	// Update is called once per frame
-	void Update () {
+	void Update () 
+	{
 	
 	}
 	

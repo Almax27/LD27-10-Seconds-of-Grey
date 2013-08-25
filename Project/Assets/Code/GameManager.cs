@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour {
 	{
 		GameObject gobj = Instantiate(conversationTemplate.gameObject) as GameObject;
 		currentConversation = gobj.GetComponent<Conversation>();
-		currentConversation.karma = worldKarma;
+		currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;;
 	}
 	
 	#endregion
@@ -79,14 +79,23 @@ public class GameManager : MonoBehaviour {
 		}
 		else if(tick <= walkingTime)
 		{
-			if(!playerAnimator.IsInTransition(0))
-				player.transform.Translate(0,0,playerSpeed*Time.deltaTime);
+			player.transform.Translate(0,0,playerSpeed*Time.deltaTime);
+		}
+		
+		if(worldKarma >= 100 || worldKarma <= -100)
+		{
+			//game over
+			Application.LoadLevel(Application.loadedLevel);
 		}
 	}
 	
 	void OnGUI()
 	{
+		GUILayout.BeginVertical("box");
 		
+		GUILayout.Label("World Karma: " + worldKarma);
+		
+		GUILayout.EndVertical();
 	}
 	
 	#endregion	
