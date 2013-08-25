@@ -10,7 +10,6 @@ public class ConversationDataEditor : EditorWindow
 	
 	#region protected variables
 	
-	protected string fileName = "ConversationData";
 	protected ConversationData data = null;
 	
 	protected int toolbarIndex = 0;
@@ -28,7 +27,7 @@ public class ConversationDataEditor : EditorWindow
 		// Get existing open window or if none, make a new one:
 		ConversationDataEditor window = (ConversationDataEditor)EditorWindow.GetWindow (typeof (ConversationDataEditor));
 		
-		window.data = XMLUtil.LoadResource<ConversationData>(window.fileName);
+		window.data = XMLUtil.LoadResource<ConversationData>(ConversationData.FileName);
 	}
 	
 	void OnGUI () 
@@ -39,7 +38,7 @@ public class ConversationDataEditor : EditorWindow
 			if(GUILayout.Button("Create new data"))
 			{
 				data = new ConversationData();
-				XMLUtil.SaveResource(fileName, data);
+				XMLUtil.SaveResource(ConversationData.FileName, data);
 			}
 		}
 		else
@@ -48,11 +47,11 @@ public class ConversationDataEditor : EditorWindow
 			
 			if(GUILayout.Button("Save"))
 			{
-				XMLUtil.SaveResource(fileName, data);
+				XMLUtil.SaveResource(ConversationData.FileName, data);
 			}
 			if(GUILayout.Button("Load"))
 			{
-				data = XMLUtil.LoadResource<ConversationData>(fileName);
+				data = XMLUtil.LoadResource<ConversationData>(ConversationData.FileName);
 			}
 			if(GUILayout.Button("Clear"))
 			{

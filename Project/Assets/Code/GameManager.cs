@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour {
 	
 	public static ConversationData conversationData = null;
 	
+	public AudioClip music;
+	
 	public GameObject player = null;
 	public float playerSpeed = 10;
 	
@@ -41,7 +43,7 @@ public class GameManager : MonoBehaviour {
 	{
 		GameObject gobj = Instantiate(conversationTemplate.gameObject) as GameObject;
 		currentConversation = gobj.GetComponent<Conversation>();
-		currentConversation.karma = worldKarma;
+		currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;;
 	}
 	
 	#endregion
@@ -53,6 +55,8 @@ public class GameManager : MonoBehaviour {
 	{
 		playerAnimator = player.GetComponentInChildren<Animator>();
 		playerAnimator.SetBool("isWalking", true);
+		
+		AudioManager.PlayMusic(music);
 	}
 	
 	// Update is called once per frame
@@ -79,14 +83,33 @@ public class GameManager : MonoBehaviour {
 		}
 		else if(tick <= walkingTime)
 		{
-			if(!playerAnimator.IsInTransition(0))
-				player.transform.Translate(0,0,playerSpeed*Time.deltaTime);
+			player.transform.Translate(0,0,playerSpeed*Time.deltaTime);
+		}
+		
+		if(worldKarma >= 100 || worldKarma <= -100)
+		{
+			//game over
+			Application.LoadLevel(Application.loadedLevel);
 		}
 	}
 	
 	void OnGUI()
 	{
+		GUILayout.BeginVertical("box");
 		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Music:", GUILayout.Width(40));
+		AudioManager.MusicVolume = GUILayout.HorizontalSlider(AudioManager.MusicVolume, 0, 1, GUILayout.Width(50));
+		GUILayout.EndHorizontal();
+		
+		GUILayout.BeginHorizontal();
+		GUILayout.Label("Fx:", GUILayout.Width(40));
+		AudioManager.FxVolume = GUILayout.HorizontalSlider(AudioManager.FxVolume, 0, 1, GUILayout.Width(50));
+		GUILayout.EndHorizontal();
+		
+		GUILayout.Label("World Karma: " + worldKarma);
+		
+		GUILayout.EndVertical();
 	}
 	
 	#endregion	

@@ -1,63 +1,21 @@
 fileFormatVersion: 2
-guid: 11e69c007dd211348a41926600f67bc5
+guid: 639153832037b604bbfbc096aacd8dba
 ModelImporter:
   serializedVersion: 15
   fileIDToRecycleName:
     100000: //RootNode
-    100002: grey_skin
-    100004: joint1
-    100006: joint10
-    100008: joint11
-    100010: joint12
-    100012: joint13
-    100014: joint14
-    100016: joint15
-    100018: joint16
-    100020: joint17
-    100022: joint18
-    100024: joint19
-    100026: joint2
-    100028: joint20
-    100030: joint21
-    100032: joint22
-    100034: joint23
-    100036: joint24
-    100038: joint3
-    100040: joint4
-    100042: joint5
-    100044: joint6
-    100046: joint7
-    100048: joint8
-    100050: joint9
+    100002: pCube1
+    100004: pTorus1
     400000: //RootNode
-    400002: grey_skin
-    400004: joint1
-    400006: joint10
-    400008: joint11
-    400010: joint12
-    400012: joint13
-    400014: joint14
-    400016: joint15
-    400018: joint16
-    400020: joint17
-    400022: joint18
-    400024: joint19
-    400026: joint2
-    400028: joint20
-    400030: joint21
-    400032: joint22
-    400034: joint23
-    400036: joint24
-    400038: joint3
-    400040: joint4
-    400042: joint5
-    400044: joint6
-    400046: joint7
-    400048: joint8
-    400050: joint9
-    4300000: grey_skin
+    400002: pCube1
+    400004: pTorus1
+    2300000: pCube1
+    2300002: pTorus1
+    3300000: pCube1
+    3300002: pTorus1
+    4300000: pCube1
+    4300002: pTorus1
     9500000: //RootNode
-    13700000: grey_skin
   materials:
     importMaterials: 1
     materialName: 0
@@ -74,7 +32,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 1
+    globalScale: .00999999978
     meshCompression: 0
     addColliders: 0
     importBlendShapes: 1

@@ -21,7 +21,7 @@ public class Conversation : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		currentChoices = GetRootChoicesAtRandom(defaultChoiceCount);
+		currentChoices = GetRootChoicesAtRandom(defaultChoiceCount, null);
 		
 		aiTurn = false;
 		ProcessChoice(AIPickChoice());
@@ -42,12 +42,15 @@ public class Conversation : MonoBehaviour {
 		
 		GUILayout.BeginVertical("box", GUILayout.Width(200));
 		
+		GUILayout.Label("Karma: " + karma);
+		
 		GUILayout.Label(lastChoice.text);
 		for(int i = 0; i < currentChoices.Count; i++)
 		{
 			ConversationChoice choice = currentChoices[i];
 			if(GUILayout.Button(choice.text, GUILayout.Width(200)))
 			{
+				karma += choice.karmaReward;
 				ProcessChoice(choice);
 				ProcessChoice(AIPickChoice());
 				break;
@@ -63,15 +66,15 @@ public class Conversation : MonoBehaviour {
 	
 	void ProcessChoice(ConversationChoice choice)
 	{
-		lastChoice = choice;
 		if(choice.responces.Count > 0)
 		{
 			currentChoices = choice.responces;
 		}
 		else
 		{
-			currentChoices = GetRootChoicesAtRandom(defaultChoiceCount);
+			currentChoices = GetRootChoicesAtRandom(defaultChoiceCount, lastChoice);
 		}
+		lastChoice = choice;
 	}
 	
 	ConversationChoice AIPickChoice()
@@ -88,21 +91,27 @@ public class Conversation : MonoBehaviour {
 		{
 			if(dataLoaded == null)
 			{
-				dataLoaded = XMLUtil.LoadResource<ConversationData>("ConversationData");
+				dataLoaded = XMLUtil.LoadResource<ConversationData>(ConversationData.FileName);
 			}
 			return dataLoaded;
 		}
 	}
 	
-	public static List<ConversationChoice> GetRootChoicesAtRandom(int count)
+	public static List<ConversationChoice> GetRootChoicesAtRandom(int count, ConversationChoice exclude)
 	{
+		int minCount = Mathf.Min(count, Data.choices.Count); 
+		
 		List<ConversationChoice> choices = new List<ConversationChoice>(Data.choices);
 		List<ConversationChoice> chosen = new List<ConversationChoice>();
-		for(int i = 0; i < count; i++)
+		
+		while(chosen.Count < minCount)
 		{
-			int index = Random.Range(0,choices.Count);
-			chosen.Add(choices[index]);
-			choices.RemoveAt(index);
+			ConversationChoice c = choices[Random.Range(0,choices.Count)];
+			if(c != exclude)
+			{
+				chosen.Add(c);
+				choices.Remove(c);
+			}
 		}
 		return chosen;
 	}
