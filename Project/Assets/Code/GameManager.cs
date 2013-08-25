@@ -1,6 +1,54 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class KarmaSettings
+{
+	public float tweenSpeed = 50f;
+	
+	public Texture2D skyGradient = null;
+	public Texture2D dirLightGradient = null;
+	public Texture2D spotLightGradient = null;
+	
+	public Quaternion goodLightDir = Quaternion.identity;
+	public Quaternion badLightDir = Quaternion.identity;
+	
+	public float goodLightIntensity = 0.5f;
+	public float badLightIntensity = 0.3f;
+	
+	public float goodShadowStrength = 0.5f;
+	public float badShadowStrength = 1f;
+	
+	private float visualKarma = 0;
+	
+	public void Update(float desiredKarma)
+	{
+		visualKarma = Mathf.MoveTowards(visualKarma, desiredKarma, tweenSpeed * Time.deltaTime);
+		
+		float t = Mathf.InverseLerp(-100,100,visualKarma);
+		
+		Color skyColor = skyGradient.GetPixelBilinear(t,0);
+		Color dirLightColor = dirLightGradient.GetPixelBilinear(t,0);
+		Color spotLightColor = spotLightGradient.GetPixelBilinear(t,0);
+		
+		Camera.main.backgroundColor = skyColor;
+		RenderSettings.fogColor = skyColor;
+		
+		foreach(Light l in Light.GetLights(LightType.Directional,0))
+		{
+			l.color = dirLightColor;
+			l.transform.rotation = Quaternion.Slerp(badLightDir, goodLightDir, t);
+			l.intensity = Mathf.Lerp(badLightIntensity, goodLightIntensity, t);
+			l.shadowStrength = Mathf.Lerp(badShadowStrength, goodShadowStrength, t);
+		}
+		
+		foreach(Light l in Light.GetLights(LightType.Spot,0))
+		{
+			l.color = dirLightColor;
+		}
+	}
+}
+
 public class GameManager : MonoBehaviour {
 	
 	#region constants
@@ -18,6 +66,8 @@ public class GameManager : MonoBehaviour {
 	
 	public GameObject player = null;
 	public float playerSpeed = 10;
+	
+	public KarmaSettings karmaSettings = new KarmaSettings();
 	
 	public Conversation conversationTemplate = null;
 	public GameObject[] worldChunks = new GameObject[0];
@@ -43,7 +93,7 @@ public class GameManager : MonoBehaviour {
 	{
 		GameObject gobj = Instantiate(conversationTemplate.gameObject) as GameObject;
 		currentConversation = gobj.GetComponent<Conversation>();
-		currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;;
+		currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;
 	}
 	
 	#endregion
@@ -91,6 +141,8 @@ public class GameManager : MonoBehaviour {
 			//game over
 			Application.LoadLevel(Application.loadedLevel);
 		}
+		
+		karmaSettings.Update(worldKarma);
 	}
 	
 	void OnGUI()
