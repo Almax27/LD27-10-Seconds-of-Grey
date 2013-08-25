@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<ConversationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <choices>
+    <ConversationChoice>
+      <text>Hello how are you?</text>
+      <responces>
+        <ConversationChoice>
+          <text>I'm ok thanks!</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Fuck off will you</text>
+          <responces />
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>Lovely Day</text>
+      <responces>
+        <ConversationChoice>
+          <text>Not really</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Yeah it is! I when was it last sunny?</text>
+          <responces>
+            <ConversationChoice>
+              <text>Last Tuesday</text>
+              <responces />
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>Last Sunday</text>
+              <responces />
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>Fuck off</text>
+              <responces />
+            </ConversationChoice>
+          </responces>
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>No one likes you</text>
+          <responces />
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>I used to be an adventurer like you... untill I took an arrow in the knee</text>
+      <responces>
+        <ConversationChoice>
+          <text>Arrow do that sometimes, you've got to be careful!</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Damn son, I've got 99 problems but that ain't one.</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Bugger off you old coon</text>
+          <responces />
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>Do you know where I can find a cheeseburger?</text>
+      <responces>
+        <ConversationChoice>
+          <text>MaccyD's</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Burger'n'Fries</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Yo Sushi</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Push off you old codger</text>
+          <responces />
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>Taco bell, taco bell!</text>
+      <responces>
+        <ConversationChoice>
+          <text>Shit me</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>Ouche</text>
+          <responces />
+        </ConversationChoice>
+        <ConversationChoice>
+          <text>No, just no</text>
+          <responces />
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+    <ConversationChoice>
+      <text>Damn son you ugly</text>
+      <responces>
+        <ConversationChoice>
+          <text>So's your mumma</text>
+          <responces>
+            <ConversationChoice>
+              <text>Your mumma's so fat she's got her own post code</text>
+              <responces>
+                <ConversationChoice>
+                  <text>:(</text>
+                  <responces />
+                </ConversationChoice>
+              </responces>
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>Your mumma's so fat she don't need the internet, she's world wide</text>
+              <responces>
+                <ConversationChoice>
+                  <text>:(</text>
+                  <responces />
+                </ConversationChoice>
+              </responces>
+            </ConversationChoice>
+            <ConversationChoice>
+              <text>Your mumma's so fat her blood type if Nutella</text>
+              <responces>
+                <ConversationChoice>
+                  <text>:(</text>
+                  <responces />
+                </ConversationChoice>
+              </responces>
+            </ConversationChoice>
+          </responces>
+        </ConversationChoice>
+      </responces>
+    </ConversationChoice>
+  </choices>
+</ConversationData>
