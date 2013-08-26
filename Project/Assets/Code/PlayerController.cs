@@ -47,17 +47,18 @@ public class PlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () 
-	{
+	{		
 		float boost = 1;
-		if(Input.GetKey(KeyCode.Space))
-			boost = speedBoost;
-		
-		animator.speed = boost;
 		
 		if(isWalking)
 		{
+			if(Input.anyKey)
+				boost = speedBoost;
+			
 			transform.Translate(0,0,movementSpeed*Time.deltaTime*boost);
 		}
+		
+		animator.speed = boost;
 	}
 	
 	void OnTriggerEnter(Collider _other)

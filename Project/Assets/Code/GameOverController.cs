@@ -41,6 +41,11 @@ public class GameOverController : MonoBehaviour {
 	{
 		translationAxis.Normalize();
 		dir = new Vector2(translationAxis.x, Mathf.Abs(translationAxis.y));
+		
+		DontDestroyOnLoad(gameObject);
+		
+		topTexture.transform.localPosition = new Vector3(dir.x, dir.y, transform.position.z);
+		bottomTexture.transform.localPosition = new Vector3(-dir.x, -dir.y, transform.position.z);
 	}
 	
 	// Update is called once per frame
@@ -65,13 +70,14 @@ public class GameOverController : MonoBehaviour {
 			if(tick < 0)
 			{
 				tick = 0;
-				state = State.IDLE;
+				Destroy(gameObject);
 			}
 			break;
 		case State.IDLE:
 			if(Input.anyKeyDown)
 			{
 				state = State.OUT;
+				Application.LoadLevel(Application.loadedLevel);
 			}
 			break;
 		}

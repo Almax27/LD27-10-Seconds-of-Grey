@@ -47,6 +47,7 @@ public class KarmaSettings
 		
 		foreach(Light l in Light.GetLights(LightType.Spot,0))
 		{
+			l.enabled = false;
 			l.color = spotLightColor;
 			l.intensity = Mathf.Lerp(badSpotLightIntensity, goodSpotLightIntensity, t);
 		}
@@ -155,7 +156,8 @@ public class GameManager : MonoBehaviour {
 		if(worldKarma >= 100 || worldKarma <= -100)
 		{
 			//game over
-			Application.LoadLevel(Application.loadedLevel);
+			Instantiate(Resources.Load("GameOver"));
+			this.enabled = false;
 		}
 		
 		HUD.Instance.desiredWorldKarma = worldKarma;

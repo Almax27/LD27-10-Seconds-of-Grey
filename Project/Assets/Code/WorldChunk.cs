@@ -31,7 +31,7 @@ public class WorldChunk : MonoBehaviour
 		if(spawnNPCs)
 		{
 			Object[] npcs = Resources.LoadAll("NPCs");
-			GameObject gobj = npcs[Random.Range(0,npcs.Length-1)] as GameObject;
+			GameObject gobj = npcs[Random.Range(0,npcs.Length)] as GameObject;
 			if(gobj != null)
 			{
 				gobj = Instantiate(gobj) as GameObject;
@@ -39,7 +39,7 @@ public class WorldChunk : MonoBehaviour
 				
 				Vector3 p = Vector3.zero;
 				p.x = GameManager.Instance.player.transform.position.x;
-				p.z = Random.Range(collider.bounds.min.z,collider.bounds.max.z);
+				p.z = Random.Range(collider.bounds.min.z + collider.bounds.extents.z, collider.bounds.max.z - collider.bounds.extents.z);
 				gobj.transform.position = p;
 			}
 		}

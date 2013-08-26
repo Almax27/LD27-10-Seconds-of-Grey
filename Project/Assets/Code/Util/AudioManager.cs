@@ -64,8 +64,15 @@ public class AudioManager : MonoBehaviour
 	
 	public static void PlayMusic(AudioClip clip)
 	{
-		Instance.musicSource.clip = clip;
-		Instance.musicSource.Play();
+		PlayMusic(clip, false);
+	}
+	public static void PlayMusic(AudioClip clip, bool forceRestart)
+	{
+		if(Instance.musicSource.clip != clip || forceRestart)
+		{
+			Instance.musicSource.clip = clip;
+			Instance.musicSource.Play();
+		}
 	}
 	
 	public static void StopMusic()
@@ -79,6 +86,8 @@ public class AudioManager : MonoBehaviour
 	
 	void Awake()
 	{
+		DontDestroyOnLoad(gameObject);
+		
 		pool = new GameObject("Pool").transform;
 		musicSource = new GameObject("Music", typeof(AudioSource)).audio;
 		oneShotSource = new GameObject("OneShot", typeof(AudioSource)).audio;

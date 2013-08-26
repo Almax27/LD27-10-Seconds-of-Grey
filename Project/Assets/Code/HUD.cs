@@ -6,17 +6,7 @@ public class HUD : MonoBehaviour
 	#region public variables
 	
 	static HUD instance = null;
-	public static HUD Instance
-	{
-		get
-		{
-			if(instance == null)
-			{
-				instance = (Instantiate(Resources.Load("HUD")) as GameObject).GetComponent<HUD>();
-			}
-			return instance;
-		}
-	}
+	public static HUD Instance{ get { return instance; } }
 	
 	#endregion
 	
