@@ -8,16 +8,15 @@ public class KarmaSettings
 	
 	public Texture2D skyGradient = null;
 	public Texture2D dirLightGradient = null;
-	public Texture2D spotLightGradient = null;
+	public Texture2D windowGradient = null;
+	
+	public Material windowMaterial = null;
 	
 	public Vector3 goodLightDir = Vector3.zero;
 	public Vector3 badLightDir = Vector3.zero;
 	
 	public float goodDirLightIntensity = 0.5f;
 	public float badDirLightIntensity = 0.3f;
-	
-	public float goodSpotLightIntensity = 0.5f;
-	public float badSpotLightIntensity = 0.3f;
 	
 	public float goodShadowStrength = 0.5f;
 	public float badShadowStrength = 1f;
@@ -32,7 +31,7 @@ public class KarmaSettings
 		
 		Color skyColor = skyGradient.GetPixelBilinear(t,0);
 		Color dirLightColor = dirLightGradient.GetPixelBilinear(t,0);
-		Color spotLightColor = spotLightGradient.GetPixelBilinear(t,0);
+		Color windowColor = windowGradient.GetPixelBilinear(t,0);
 		
 		Camera.main.backgroundColor = skyColor;
 		RenderSettings.fogColor = skyColor;
@@ -48,9 +47,9 @@ public class KarmaSettings
 		foreach(Light l in Light.GetLights(LightType.Spot,0))
 		{
 			l.enabled = false;
-			l.color = spotLightColor;
-			l.intensity = Mathf.Lerp(badSpotLightIntensity, goodSpotLightIntensity, t);
 		}
+		
+		windowMaterial.color = windowColor;
 	}
 }
 
@@ -85,6 +84,8 @@ public class GameManager : MonoBehaviour {
 	
 	public float worldKarma = 0;
 	
+	public float Tick { get { return tick; } }
+	
 	#endregion
 	
 	#region protected variables
@@ -108,6 +109,7 @@ public class GameManager : MonoBehaviour {
 			currentConversation = gobj.GetComponent<Conversation>();
 			currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;
 			currentConversation.NPC = _NPC;
+			currentConversation.transform.position = player.transform.position;
 			
 			_NPC.SetState(NPCController.NPCState.CHAT);
 			
@@ -144,8 +146,9 @@ public class GameManager : MonoBehaviour {
 				//resolve animations
 				currentConversation.NPC.SetState(NPCController.NPCState.SIDESTEP);
 				
-				Destroy(currentConversation.gameObject);
+				currentConversation.Exit();
 				currentConversation = null;
+				tick = 0;
 				
 				player.StartWalking();
 			}

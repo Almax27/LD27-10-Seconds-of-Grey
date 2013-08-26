@@ -8,6 +8,10 @@ public class PlayerController : MonoBehaviour {
 	public float speedBoost = 2;
 	public float movementSpeed = 10;
 	
+	public CamFollow mainCamera = null;
+	public Camera walkingCamera = null;
+	public Camera chattingCamera = null;
+	
 	#endregion
 	
 	#region protected variables
@@ -49,6 +53,8 @@ public class PlayerController : MonoBehaviour {
 	void Update () 
 	{		
 		float boost = 1;
+		
+		mainCamera.target = isWalking ? walkingCamera : chattingCamera;
 		
 		if(isWalking)
 		{

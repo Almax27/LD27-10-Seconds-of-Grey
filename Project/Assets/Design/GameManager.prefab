@@ -101,7 +101,7 @@ GameObject:
   - 4: {fileID: 400012}
   - 20: {fileID: 2000000}
   m_Layer: 0
-  m_Name: WalkingCam
+  m_Name: Camera_Chat
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -550,8 +550,9 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400070}
+  - 20: {fileID: 2000004}
   m_Layer: 0
-  m_Name: AIText
+  m_Name: Camera_Walking
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -565,8 +566,41 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400072}
+  - 131: {fileID: 13100008}
   m_Layer: 0
-  m_Name: PlayerChoices
+  m_Name: WatchImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100074
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400074}
+  - 132: {fileID: 13200000}
+  m_Layer: 0
+  m_Name: WatchText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100076
+GameObject:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400076}
+  - 114: {fileID: 11400008}
+  m_Layer: 0
+  m_Name: Watch
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -651,8 +685,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100012}
-  m_LocalRotation: {x: -.0888828784, y: -.353027433, z: -.0556322411, w: .929718554}
-  m_LocalPosition: {x: 4.74635029, y: 1.79363155, z: -3.22437668}
+  m_LocalRotation: {x: .0302402079, y: -.457051873, z: .0206799917, w: .888685286}
+  m_LocalPosition: {x: 4.69004631, y: 2.90843391, z: -3.58418274}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400024}
@@ -726,9 +760,8 @@ Transform:
   m_LocalPosition: {x: 4.5, y: 0, z: -43.695694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 400070}
   - {fileID: 400048}
-  - {fileID: 400072}
+  - {fileID: 400070}
   - {fileID: 400012}
   m_Father: {fileID: 400000}
 --- !u!4 &400026
@@ -959,6 +992,7 @@ Transform:
   - {fileID: 400058}
   - {fileID: 400064}
   - {fileID: 400066}
+  - {fileID: 400076}
   m_Father: {fileID: 400000}
 --- !u!4 &400064
 Transform:
@@ -999,8 +1033,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100070}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.03090906, y: 2.85873842, z: .044418335}
+  m_LocalRotation: {x: -.0888828784, y: -.353027433, z: -.0556322411, w: .929718554}
+  m_LocalPosition: {x: 4.74635029, y: 1.79363155, z: -3.22437668}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 400024}
@@ -1011,10 +1045,34 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100072}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.03090906, y: 2.85873842, z: .044418335}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children: []
-  m_Father: {fileID: 400024}
+  m_Father: {fileID: 400076}
+--- !u!4 &400074
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100074}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 400076}
+--- !u!4 &400076
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100076}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400072}
+  - {fileID: 400074}
+  m_Father: {fileID: 400062}
 --- !u!20 &2000000
 Camera:
   m_ObjectHideFlags: 1
@@ -1065,6 +1123,34 @@ Camera:
   orthographic: 0
   orthographic size: 100
   m_Depth: 0
+  m_CullingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RenderingPath: -1
+  m_TargetTexture: {fileID: 0}
+  m_HDR: 0
+--- !u!20 &2000004
+Camera:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100070}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_ClearFlags: 1
+  m_BackGroundColor: {r: .192156866, g: .301960796, b: .474509805, a: .0196078438}
+  m_NormalizedViewPortRect:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1
+    height: 1
+  near clip plane: .300000012
+  far clip plane: 1000
+  field of view: 45
+  orthographic: 0
+  orthographic size: 100
+  m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
@@ -1129,13 +1215,12 @@ MonoBehaviour:
     tweenSpeed: 20
     skyGradient: {fileID: 2800000, guid: ea4723aa1b9daa8428d44fd41a948079, type: 3}
     dirLightGradient: {fileID: 2800000, guid: ac7f111e1b82160469b48452fc99bfda, type: 3}
-    spotLightGradient: {fileID: 2800000, guid: 553c7b3ed51644647956be8b85a2eb30, type: 3}
+    windowGradient: {fileID: 2800000, guid: 553c7b3ed51644647956be8b85a2eb30, type: 3}
+    windowMaterial: {fileID: 2100000, guid: 87ed840af237149469009db3e4f8e2e7, type: 2}
     goodLightDir: {x: 25, y: 300, z: -160}
     badLightDir: {x: 25, y: 90, z: 0}
     goodDirLightIntensity: .5
     badDirLightIntensity: 1
-    goodSpotLightIntensity: 0
-    badSpotLightIntensity: 8
     goodShadowStrength: .5
     badShadowStrength: 1
   conversationTemplate: {fileID: 11400000, guid: e5b2a394c0677da44a19a72220b57e43,
@@ -1155,6 +1240,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speedBoost: 2
   movementSpeed: 4
+  mainCamera: {fileID: 11400006}
+  walkingCamera: {fileID: 2000004}
+  chattingCamera: {fileID: 2000000}
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1170,6 +1258,7 @@ MonoBehaviour:
   worldKarmaNub: {fileID: 13100006}
   conversationKarmaBar: {fileID: 13100002}
   conversationKarmaNub: {fileID: 13100000}
+  watchText: {fileID: 13200000}
   tweenTime: .200000003
   desiredWorldKarma: 0
   currentConversation: {fileID: 0}
@@ -1184,10 +1273,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6481fe77d39009d4c930ec06e57126d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 2000000}
+  target: {fileID: 2000004}
   maxDistance: 1
   deadDistance: .100000001
   smoothTime: .5
+--- !u!114 &11400008
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100076}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5a9381e74ea7d54a87a31c60ebcd962, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!124 &12400000
 Behaviour:
   m_ObjectHideFlags: 1
@@ -1271,6 +1371,48 @@ GUITexture:
   m_RightBorder: 0
   m_TopBorder: 0
   m_BottomBorder: 0
+--- !u!131 &13100008
+GUITexture:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100072}
+  m_Enabled: 1
+  m_Texture: {fileID: 2800000, guid: 123dcc7dd52496a4f96bf42eab72cb50, type: 3}
+  m_Color: {r: .5, g: .5, b: .5, a: .5}
+  m_PixelInset:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 350
+    height: 350
+  m_LeftBorder: 0
+  m_RightBorder: 0
+  m_TopBorder: 0
+  m_BottomBorder: 0
+--- !u!132 &13200000
+GUIText:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100074}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Text: 10:00
+  m_Anchor: 4
+  m_Alignment: 1
+  m_PixelOffset: {x: 55, y: 32}
+  m_LineSpacing: 1
+  m_TabSize: 4
+  m_Font: {fileID: 12800000, guid: 97c86bf97a0c5d84f87b650d32d6cf44, type: 3}
+  m_Material: {fileID: 0}
+  m_FontSize: 0
+  m_FontStyle: 0
+  m_Color:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_PixelCorrect: 1
+  m_RichText: 1
 --- !u!136 &13600000
 CapsuleCollider:
   m_ObjectHideFlags: 1

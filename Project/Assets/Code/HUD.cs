@@ -16,6 +16,7 @@ public class HUD : MonoBehaviour
 	public GUITexture worldKarmaNub = null;
 	public GUITexture conversationKarmaBar = null;
 	public GUITexture conversationKarmaNub = null;
+	public GUIText watchText = null;
 	
 	public float tweenTime = 0.5f;
 	
@@ -67,6 +68,10 @@ public class HUD : MonoBehaviour
 		inset = conversationKarmaNub.pixelInset;
 		inset.x = (visualConversationKarma/100f)*(conversationKarmaBar.pixelInset.width/2-inset.width) - (inset.width/2f);
 		conversationKarmaNub.pixelInset = inset;
+		
+		
+		float time = 10f - (Mathf.Clamp(GameManager.Instance.Tick, 0f, 10f));
+		watchText.text = (time*100f).ToString("00:00");
 	}
 	
 	#endregion

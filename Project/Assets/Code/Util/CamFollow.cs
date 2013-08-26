@@ -39,8 +39,10 @@ public class CamFollow : MonoBehaviour {
 		{
 			Vector3 dv = target.transform.position - transform.position;
 			float d = dv.magnitude;
+			
 			transform.position = Vector3.SmoothDamp(transform.position, target.transform.position, ref vel, smoothTime);
-			transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 360f*smoothTime*Time.deltaTime);
+			
+			transform.rotation = Quaternion.RotateTowards(transform.rotation, target.transform.rotation, 45f*smoothTime*Time.deltaTime);
 			
 			camera.fieldOfView = target.fieldOfView;
 		}
