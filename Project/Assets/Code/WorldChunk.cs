@@ -13,6 +13,12 @@ public class WorldChunk : MonoBehaviour
 	
 	#endregion
 	
+	#region public variables
+	
+	public bool spawnNPCs = true;
+	
+	#endregion
+	
 	#region private methods
 	
 	#endregion
@@ -22,7 +28,21 @@ public class WorldChunk : MonoBehaviour
 	// Use this for initialization
 	void Awake () 
 	{
-
+		if(spawnNPCs)
+		{
+			Object[] npcs = Resources.LoadAll("NPCs");
+			GameObject gobj = npcs[Random.Range(0,npcs.Length-1)] as GameObject;
+			if(gobj != null)
+			{
+				gobj = Instantiate(gobj) as GameObject;
+				gobj.transform.parent = transform;
+				
+				Vector3 p = Vector3.zero;
+				p.x = GameManager.Instance.player.transform.position.x;
+				p.z = Random.Range(collider.bounds.min.z,collider.bounds.max.z);
+				gobj.transform.position = p;
+			}
+		}
 	}
 	
 	void OnDestroy()

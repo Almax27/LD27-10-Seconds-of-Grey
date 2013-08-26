@@ -13,8 +13,11 @@ public class KarmaSettings
 	public Vector3 goodLightDir = Vector3.zero;
 	public Vector3 badLightDir = Vector3.zero;
 	
-	public float goodLightIntensity = 0.5f;
-	public float badLightIntensity = 0.3f;
+	public float goodDirLightIntensity = 0.5f;
+	public float badDirLightIntensity = 0.3f;
+	
+	public float goodSpotLightIntensity = 0.5f;
+	public float badSpotLightIntensity = 0.3f;
 	
 	public float goodShadowStrength = 0.5f;
 	public float badShadowStrength = 1f;
@@ -38,13 +41,14 @@ public class KarmaSettings
 		{
 			l.color = dirLightColor;
 			l.transform.rotation = Quaternion.Euler( Vector3.Slerp(badLightDir, goodLightDir, t) );
-			l.intensity = Mathf.Lerp(badLightIntensity, goodLightIntensity, t);
+			l.intensity = Mathf.Lerp(badDirLightIntensity, goodDirLightIntensity, t);
 			l.shadowStrength = Mathf.Lerp(badShadowStrength, goodShadowStrength, t);
 		}
 		
 		foreach(Light l in Light.GetLights(LightType.Spot,0))
 		{
-			l.color = dirLightColor;
+			l.color = spotLightColor;
+			l.intensity = Mathf.Lerp(badSpotLightIntensity, goodSpotLightIntensity, t);
 		}
 	}
 }
@@ -71,15 +75,12 @@ public class GameManager : MonoBehaviour {
 	
 	public AudioClip music;
 	
-	public GameObject player = null;
-	public float playerSpeed = 10;
+	public PlayerController player = null;
 	
 	public KarmaSettings karmaSettings = new KarmaSettings();
 	
 	public Conversation conversationTemplate = null;
 	public GameObject[] worldChunks = new GameObject[0];
-	
-	public float tick = 0;
 	
 	public float worldKarma = 0;
 	
@@ -87,10 +88,12 @@ public class GameManager : MonoBehaviour {
 	
 	#region protected variables
 	
+	bool isIntro = true;
+	
+	protected float tick = 0;
+	
 	protected Conversation currentConversation = null;
 	protected List<GameObject> worldChunkInstances = new List<GameObject>();
-	
-	protected Animator playerAnimator = null;
 	
 	#endregion
 	
@@ -104,6 +107,10 @@ public class GameManager : MonoBehaviour {
 			currentConversation = gobj.GetComponent<Conversation>();
 			currentConversation.karma = Random.Range(-50,50) + (int)worldKarma/5;
 			currentConversation.NPC = _NPC;
+			
+			_NPC.SetState(NPCController.NPCState.CHAT);
+			
+			tick = 0;
 		}
 	}
 	
@@ -119,46 +126,37 @@ public class GameManager : MonoBehaviour {
 	// Use this for initialization
 	void Start () 
 	{
-		playerAnimator = player.GetComponentInChildren<Animator>();
-		playerAnimator.SetBool("isWalking", true);
-		
 		AudioManager.PlayMusic(music);
+		Conversation.GetData();
 	}
 	
 	// Update is called once per frame
 	void Update () 
 	{
-		tick += Time.deltaTime;
-		if(tick > walkingTime + conversationTime)
+		if(currentConversation != null)
 		{
-			worldKarma += currentConversation.karma;
-			Destroy(currentConversation.gameObject);
-			currentConversation = null;
-			
-			playerAnimator.SetBool("isChatting", false);
-			playerAnimator.SetBool("isWalking", true);
-			
-			tick = 0;
+			tick += Time.deltaTime;
+			if(tick > conversationTime)
+			{				
+				worldKarma += currentConversation.karma;
+				
+				//resolve animations
+				currentConversation.NPC.SetState(NPCController.NPCState.SIDESTEP);
+				
+				Destroy(currentConversation.gameObject);
+				currentConversation = null;
+				
+				player.StartWalking();
+			}
 		}
-		else if(currentConversation == null && tick > walkingTime)
-		{
-			StartConversation(null);
-			
-			playerAnimator.SetBool("isChatting", true);
-			playerAnimator.SetBool("isWalking", false);
-		}
-		else if(tick <= walkingTime)
-		{
-			player.transform.Translate(0,0,playerSpeed*Time.deltaTime);
-		}
+		
+		karmaSettings.Update(worldKarma);
 		
 		if(worldKarma >= 100 || worldKarma <= -100)
 		{
 			//game over
 			Application.LoadLevel(Application.loadedLevel);
 		}
-		
-		karmaSettings.Update(worldKarma);
 		
 		HUD.Instance.desiredWorldKarma = worldKarma;
 		HUD.Instance.currentConversation = currentConversation;

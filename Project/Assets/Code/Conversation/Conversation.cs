@@ -87,23 +87,20 @@ public class Conversation : MonoBehaviour {
 	#region static helpers
 	
 	static ConversationData dataLoaded;
-	public static ConversationData Data
+	public static ConversationData GetData()
 	{
-		get
+		if(dataLoaded == null)
 		{
-			if(dataLoaded == null)
-			{
-				dataLoaded = XMLUtil.LoadResource<ConversationData>(ConversationData.FileName);
-			}
-			return dataLoaded;
+			dataLoaded = XMLUtil.LoadResource<ConversationData>(ConversationData.FileName);
 		}
+		return dataLoaded;
 	}
 	
 	public static List<ConversationChoice> GetRootChoicesAtRandom(int count, ConversationChoice exclude)
 	{
-		int minCount = Mathf.Min(count, Data.choices.Count); 
+		int minCount = Mathf.Min(count, GetData().choices.Count); 
 		
-		List<ConversationChoice> choices = new List<ConversationChoice>(Data.choices);
+		List<ConversationChoice> choices = new List<ConversationChoice>(GetData().choices);
 		List<ConversationChoice> chosen = new List<ConversationChoice>();
 		
 		while(chosen.Count < minCount)

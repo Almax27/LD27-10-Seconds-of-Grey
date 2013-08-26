@@ -1,8 +1,15 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+[RequireComponent(typeof(CapsuleCollider))]
 public class NPCController : MonoBehaviour {
 	
+	public enum NPCState
+	{
+		IDLE,
+		CHAT,
+		SIDESTEP
+	}
 	#region public variables
 	
 	
@@ -12,6 +19,31 @@ public class NPCController : MonoBehaviour {
 	#region protected variables
 	
 	protected Animator animator = null;
+	
+	#endregion
+	
+	#region public methods
+	
+	public void SetState(NPCState state)
+	{
+		animator.SetBool("chat", false);
+		animator.SetBool("sidestep", false);
+		switch(state)
+		{
+		case NPCState.IDLE:
+		{
+			
+		}break;
+		case NPCState.CHAT:
+		{
+			animator.SetBool("chat", true);
+		}break;
+		case NPCState.SIDESTEP:
+		{
+			animator.SetBool("sidestep", true);
+		}break;
+		}
+	}
 	
 	#endregion
 	
@@ -39,6 +71,7 @@ public class NPCController : MonoBehaviour {
 		if(_other.tag == "Player")
 		{
 			GameManager.Instance.StartConversation(this);
+			animator.SetBool("isChatting", true);
 		}
 	}
 	
