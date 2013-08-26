@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		isWalking = true;
 		animator.SetBool("isChatting", false);
+		animator.SetBool("isIdle", false);
 		animator.SetBool("isWalking", true);
 	}
 	
@@ -75,6 +76,14 @@ public class PlayerController : MonoBehaviour {
 			isWalking = false;
 			animator.SetBool("isChatting", true);
 			animator.SetBool("isWalking", false);
+			animator.SetBool("isIdle", false);
+		}
+		if(_other.tag == "Title")
+		{
+			isWalking = false;
+			animator.SetBool("isChatting", false);
+			animator.SetBool("isWalking", false);
+			animator.SetBool("isIdle", true);
 		}
 	}
 	
