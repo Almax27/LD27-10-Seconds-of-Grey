@@ -15,6 +15,8 @@ public class Conversation : MonoBehaviour {
 	public bool aiTurn = false;
 	public ConversationChoice lastChoice = null;
 	
+	public NPCController NPC = null;
+	
 	#endregion
 	
 	

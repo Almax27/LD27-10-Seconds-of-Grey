@@ -74,7 +74,7 @@ ModelImporter:
     clipAnimations:
     - name: chat
       takeName: Take 001
-      firstFrame: 19
+      firstFrame: 20
       lastFrame: 39
       wrapMode: 0
       orientationOffsetY: 0

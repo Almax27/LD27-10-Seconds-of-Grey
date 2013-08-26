@@ -17,6 +17,8 @@ public class ConversationDataEditor : EditorWindow
 	
 	protected Vector2 scrollPos = Vector2.zero;	
 	
+	protected GUIStyle boldStyle = null;
+	
 	#endregion
 	
 	#region private methods
@@ -32,6 +34,12 @@ public class ConversationDataEditor : EditorWindow
 	
 	void OnGUI () 
 	{
+		if(boldStyle == null)
+		{
+			boldStyle = new GUIStyle(GUI.skin.label);
+			boldStyle.fontStyle = FontStyle.Bold;
+		}
+		
 		if(data == null)
 		{
 			GUILayout.Label("No data found");
@@ -75,7 +83,60 @@ public class ConversationDataEditor : EditorWindow
 	{		
 		GUILayout.BeginVertical();
 		
-		GUILayout.Label("Depth: " + depth);
+		GUILayout.Label("Player Choice: " + depth, boldStyle);
+		
+		for(int j = 0; j < choices.Count; j++)
+		{
+			ConversationChoice choice = choices[j];
+			
+			GUILayout.BeginHorizontal("box");
+			
+				GUILayout.BeginVertical(GUILayout.Width(100));
+				
+					GUILayout.BeginHorizontal();
+					
+						if(GUILayout.Button("-", GUILayout.Width(20))) 
+							choices.RemoveAt(j);
+						
+						EditorGUILayout.MinMaxSlider(ref choice.minKarma, ref choice.maxKarma, -100, 100, GUILayout.Width(100));
+						choice.karmaReward = EditorGUILayout.FloatField(choice.karmaReward, GUILayout.Width(50));
+					
+					GUILayout.EndHorizontal();
+			
+					if(choice.text == "")
+						GUI.color = Color.red;
+			
+					choice.text = GUILayout.TextArea(choice.text, GUILayout.MinWidth(100));
+			
+					GUI.color = Color.white;
+					
+				GUILayout.EndVertical();
+				
+				if(choice.responces.Count == 0)
+				{
+					//always have at least 1 responce
+					choice.responces.Add(new ConversationChoice());
+				}
+				else
+				{
+					AIReponce(choice.responces, depth);
+				}
+			
+			GUILayout.EndHorizontal();
+			
+		}
+		
+		if(GUILayout.Button("Add Choice", GUILayout.Width(100))) 
+			choices.Add(new ConversationChoice());
+		
+		GUILayout.EndVertical();
+	}
+	
+	void AIReponce(List<ConversationChoice> choices, int depth)
+	{
+		GUILayout.BeginVertical();
+		
+		GUILayout.Label("AI Reponce: " + depth, boldStyle);
 		
 		for(int j = 0; j < choices.Count; j++)
 		{
@@ -86,14 +147,16 @@ public class ConversationDataEditor : EditorWindow
 			if(GUILayout.Button("-", GUILayout.Width(20))) 
 				choices.RemoveAt(j);
 			
-			EditorGUILayout.MinMaxSlider(ref choice.minKarma, ref choice.maxKarma, -100, 100, GUILayout.Width(100));
-			choice.karmaReward = EditorGUILayout.FloatField(choice.karmaReward, GUILayout.Width(50));
-			
+			if(choice.text == "")
+				GUI.color = Color.red;
+	
 			choice.text = GUILayout.TextArea(choice.text, GUILayout.MinWidth(100));
+	
+			GUI.color = Color.white;
 			
 			if(choice.responces.Count == 0)
 			{
-				if(GUILayout.Button("Add Responce", GUILayout.Width(100))) 
+				if(GUILayout.Button("Add Choice", GUILayout.Width(100))) 
 					choice.responces.Add(new ConversationChoice());
 			}
 			else
@@ -104,7 +167,7 @@ public class ConversationDataEditor : EditorWindow
 			GUILayout.EndHorizontal();
 		}
 		
-		if(GUILayout.Button("Add Choice", GUILayout.Width(100))) 
+		if(GUILayout.Button("Add Reponce", GUILayout.Width(100))) 
 			choices.Add(new ConversationChoice());
 		
 		GUILayout.EndVertical();
