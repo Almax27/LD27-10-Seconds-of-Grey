@@ -23,7 +23,7 @@
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>-10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>Bazinga.</text>
@@ -87,7 +87,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -117,7 +117,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -155,14 +155,14 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-3</karmaReward>
                 </ConversationChoice>
                 <ConversationChoice>
                   <text>Me too!</text>
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -177,7 +177,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>3</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -215,7 +215,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -230,7 +230,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -245,7 +245,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -274,7 +274,7 @@
                           <responces />
                           <minKarma>-100</minKarma>
                           <maxKarma>100</maxKarma>
-                          <karmaReward>0</karmaReward>
+                          <karmaReward>10</karmaReward>
                         </ConversationChoice>
                       </responces>
                       <minKarma>-100</minKarma>
@@ -289,7 +289,7 @@
                           <responces />
                           <minKarma>-100</minKarma>
                           <maxKarma>100</maxKarma>
-                          <karmaReward>0</karmaReward>
+                          <karmaReward>-10</karmaReward>
                         </ConversationChoice>
                       </responces>
                       <minKarma>-100</minKarma>
@@ -299,7 +299,7 @@
                   </responces>
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
                 <ConversationChoice>
                   <text>Yes.</text>
@@ -312,7 +312,7 @@
                           <responces />
                           <minKarma>-100</minKarma>
                           <maxKarma>100</maxKarma>
-                          <karmaReward>0</karmaReward>
+                          <karmaReward>10</karmaReward>
                         </ConversationChoice>
                       </responces>
                       <minKarma>-100</minKarma>
@@ -327,7 +327,7 @@
                           <responces />
                           <minKarma>-100</minKarma>
                           <maxKarma>100</maxKarma>
-                          <karmaReward>0</karmaReward>
+                          <karmaReward>-10</karmaReward>
                         </ConversationChoice>
                       </responces>
                       <minKarma>-100</minKarma>
@@ -337,7 +337,7 @@
                   </responces>
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -352,7 +352,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -367,7 +367,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -522,7 +522,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -575,7 +575,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -590,7 +590,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -621,14 +621,14 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
                 <ConversationChoice>
                   <text>Freak accident.</text>
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -643,7 +643,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -658,7 +658,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -703,7 +703,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -718,7 +718,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -741,7 +741,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -763,7 +763,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -773,7 +773,7 @@
           </responces>
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>5</karmaReward>
         </ConversationChoice>
       </responces>
       <minKarma>-100</minKarma>
@@ -794,14 +794,14 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
                 <ConversationChoice>
                   <text>Put your paws up!</text>
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -816,7 +816,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -826,7 +826,7 @@
           </responces>
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>I'll beat you silly, boy.</text>
@@ -839,7 +839,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -854,7 +854,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -864,7 +864,7 @@
           </responces>
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>-10</karmaReward>
         </ConversationChoice>
       </responces>
       <minKarma>-100</minKarma>
@@ -885,7 +885,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -900,7 +900,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -910,7 +910,7 @@
           </responces>
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>10</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>Hotdiggity, sure would.</text>
@@ -923,7 +923,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -938,7 +938,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>10</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>
@@ -948,14 +948,14 @@
           </responces>
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>5</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>Get that away from me.</text>
           <responces />
           <minKarma>-100</minKarma>
           <maxKarma>100</maxKarma>
-          <karmaReward>0</karmaReward>
+          <karmaReward>-5</karmaReward>
         </ConversationChoice>
         <ConversationChoice>
           <text>What's the catch?</text>
@@ -968,7 +968,7 @@
                   <responces />
                   <minKarma>-100</minKarma>
                   <maxKarma>100</maxKarma>
-                  <karmaReward>0</karmaReward>
+                  <karmaReward>-5</karmaReward>
                 </ConversationChoice>
               </responces>
               <minKarma>-100</minKarma>

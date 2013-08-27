@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class GameOverController : MonoBehaviour {
+public class PopupController : MonoBehaviour {
 	
 	#region public types
 	
@@ -10,6 +10,12 @@ public class GameOverController : MonoBehaviour {
 		IN,
 		IDLE,
 		OUT
+	}
+	
+	public enum ExitAction
+	{
+		RELOAD,
+		DESTROY
 	}
 	
 	#endregion
@@ -23,6 +29,8 @@ public class GameOverController : MonoBehaviour {
 	public Easing.Method easingMethodIn = Easing.Method.Linear;
 	public Easing.Method easingMethodOut = Easing.Method.Linear;
 	public float easingDuration = 1;
+	
+	public ExitAction exitAction = ExitAction.DESTROY;
 	
 	#endregion
 	
@@ -77,7 +85,8 @@ public class GameOverController : MonoBehaviour {
 			if(Input.anyKeyDown)
 			{
 				state = State.OUT;
-				Application.LoadLevel(Application.loadedLevel);
+				if(exitAction == ExitAction.RELOAD)
+					Application.LoadLevel(Application.loadedLevel);
 			}
 			break;
 		}

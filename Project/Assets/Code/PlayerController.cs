@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour {
 	public Camera chattingCamera = null;
 	
 	public Collider playButton = null;
+	public Collider creditsButton = null;
 	
 	#endregion
 	
@@ -20,6 +21,8 @@ public class PlayerController : MonoBehaviour {
 	
 	protected Animator animator = null;
 	protected bool isWalking = true;
+	
+	protected GameObject credits = null;
 	
 	#endregion
 	
@@ -56,6 +59,9 @@ public class PlayerController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () 
 	{		
+		if(credits != null)
+			return;
+		
 		float boost = 1;
 		
 		if(isWalking)
@@ -78,6 +84,16 @@ public class PlayerController : MonoBehaviour {
 				}
 				else
 					playButton.renderer.material.color = Color.cyan;
+			}
+			creditsButton.renderer.material.color = Color.white;
+			if(creditsButton.Raycast(r, out hit, 100))
+			{
+				if(Input.GetMouseButtonUp(0))
+				{
+					credits = Instantiate(Resources.Load("Credits")) as GameObject;
+				}
+				else
+					creditsButton.renderer.material.color = Color.cyan;
 			}
 		}
 		
