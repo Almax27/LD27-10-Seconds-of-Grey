@@ -83,7 +83,7 @@ public class ConversationDataEditor : EditorWindow
 	{		
 		GUILayout.BeginVertical();
 		
-		GUILayout.Label("Player Choice: " + depth, boldStyle);
+		GUILayout.Label("AI Choice: " + depth, boldStyle);
 		
 		for(int j = 0; j < choices.Count; j++)
 		{
@@ -98,8 +98,8 @@ public class ConversationDataEditor : EditorWindow
 						if(GUILayout.Button("-", GUILayout.Width(20))) 
 							choices.RemoveAt(j);
 						
-						EditorGUILayout.MinMaxSlider(ref choice.minKarma, ref choice.maxKarma, -100, 100, GUILayout.Width(100));
-						choice.karmaReward = EditorGUILayout.FloatField(choice.karmaReward, GUILayout.Width(50));
+						//EditorGUILayout.MinMaxSlider(ref choice.minKarma, ref choice.maxKarma, -100, 100, GUILayout.Width(100));
+						//choice.karmaReward = EditorGUILayout.FloatField(choice.karmaReward, GUILayout.Width(50));
 					
 					GUILayout.EndHorizontal();
 			
@@ -119,24 +119,24 @@ public class ConversationDataEditor : EditorWindow
 				}
 				else
 				{
-					AIReponce(choice.responces, depth);
+					PlayerReponce(choice.responces, depth);
 				}
 			
 			GUILayout.EndHorizontal();
 			
 		}
 		
-		if(GUILayout.Button("Add Choice", GUILayout.Width(100))) 
+		if(GUILayout.Button("Add AI", GUILayout.Width(100))) 
 			choices.Add(new ConversationChoice());
 		
 		GUILayout.EndVertical();
 	}
 	
-	void AIReponce(List<ConversationChoice> choices, int depth)
+	void PlayerReponce(List<ConversationChoice> choices, int depth)
 	{
 		GUILayout.BeginVertical();
 		
-		GUILayout.Label("AI Reponce: " + depth, boldStyle);
+		GUILayout.Label("Player Reponce: " + depth, boldStyle);
 		
 		for(int j = 0; j < choices.Count; j++)
 		{
@@ -144,19 +144,30 @@ public class ConversationDataEditor : EditorWindow
 			
 			GUILayout.BeginHorizontal("box");
 			
-			if(GUILayout.Button("-", GUILayout.Width(20))) 
-				choices.RemoveAt(j);
+			GUILayout.BeginVertical();
 			
-			if(choice.text == "")
-				GUI.color = Color.red;
+				GUILayout.BeginHorizontal();
+						
+					if(GUILayout.Button("-", GUILayout.Width(20))) 
+						choices.RemoveAt(j);
+					
+					EditorGUILayout.MinMaxSlider(ref choice.minKarma, ref choice.maxKarma, -100, 100, GUILayout.Width(100));
+					choice.karmaReward = EditorGUILayout.FloatField(choice.karmaReward, GUILayout.Width(50));
+				
+				GUILayout.EndHorizontal();
+				
+				if(choice.text == "")
+					GUI.color = Color.red;
+		
+				choice.text = GUILayout.TextArea(choice.text, GUILayout.MinWidth(100));
 	
-			choice.text = GUILayout.TextArea(choice.text, GUILayout.MinWidth(100));
-	
+			GUILayout.EndVertical();
+			
 			GUI.color = Color.white;
 			
 			if(choice.responces.Count == 0)
 			{
-				if(GUILayout.Button("Add Choice", GUILayout.Width(100))) 
+				if(GUILayout.Button("Add AI", GUILayout.Width(100))) 
 					choice.responces.Add(new ConversationChoice());
 			}
 			else
@@ -167,7 +178,7 @@ public class ConversationDataEditor : EditorWindow
 			GUILayout.EndHorizontal();
 		}
 		
-		if(GUILayout.Button("Add Reponce", GUILayout.Width(100))) 
+		if(GUILayout.Button("Add Player", GUILayout.Width(100))) 
 			choices.Add(new ConversationChoice());
 		
 		GUILayout.EndVertical();

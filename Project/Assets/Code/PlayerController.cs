@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour {
 	public Camera walkingCamera = null;
 	public Camera chattingCamera = null;
 	
+	public Collider playButton = null;
+	
 	#endregion
 	
 	#region protected variables
@@ -25,6 +27,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public void StartWalking()
 	{
+		mainCamera.target = walkingCamera;
 		isWalking = true;
 		animator.SetBool("isChatting", false);
 		animator.SetBool("isIdle", false);
@@ -55,14 +58,27 @@ public class PlayerController : MonoBehaviour {
 	{		
 		float boost = 1;
 		
-		mainCamera.target = isWalking ? walkingCamera : chattingCamera;
-		
 		if(isWalking)
 		{
 			if(Input.anyKey)
 				boost = speedBoost;
 			
 			transform.Translate(0,0,movementSpeed*Time.deltaTime*boost);
+		}
+		else
+		{
+			Ray r = Camera.main.ScreenPointToRay(Input.mousePosition);
+			RaycastHit hit;
+			playButton.renderer.material.color = Color.white;
+			if(playButton.Raycast(r, out hit, 100))
+			{
+				if(Input.GetMouseButtonUp(0))
+				{
+					StartWalking();
+				}
+				else
+					playButton.renderer.material.color = Color.cyan;
+			}
 		}
 		
 		animator.speed = boost;
@@ -72,6 +88,7 @@ public class PlayerController : MonoBehaviour {
 	{
 		if(_other.tag == "NPC")
 		{
+			mainCamera.target = chattingCamera;
 			GameManager.Instance.StartConversation(null);
 			isWalking = false;
 			animator.SetBool("isChatting", true);

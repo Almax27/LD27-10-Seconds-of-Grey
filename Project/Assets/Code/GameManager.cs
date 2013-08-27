@@ -181,8 +181,6 @@ public class GameManager : MonoBehaviour {
 		AudioManager.FxVolume = GUILayout.HorizontalSlider(AudioManager.FxVolume, 0, 1, GUILayout.Width(50));
 		GUILayout.EndHorizontal();
 		
-		GUILayout.Label("World Karma: " + worldKarma);
-		
 		GUILayout.EndVertical();
 	}
 	
